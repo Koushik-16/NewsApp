@@ -64,3 +64,4 @@ class MainActivity : AppCompatActivity(), NewsItemclicked {
     }
 
 }
+Uchccch bkgubpvohvig
