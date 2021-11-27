@@ -3,6 +3,7 @@ package com.example.newsfresh
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.browser.customtabs.CustomTabsIntent
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -21,6 +22,7 @@ class MainActivity : AppCompatActivity(), NewsItemclicked {
 
 
         recyclerView.layoutManager  = LinearLayoutManager(this)
+        progressbar.visibility = View.VISIBLE
         fetchData()
          mAdapter = NewsListAdapter( this)
         recyclerView.adapter = mAdapter
@@ -34,6 +36,7 @@ class MainActivity : AppCompatActivity(), NewsItemclicked {
             url,
             null,
             Response.Listener {
+                progressbar.visibility = View.GONE
              val newsJsonArray = it.getJSONArray("articles")
                 val newsArray = ArrayList<News>()
                 for(i in 0 until newsJsonArray.length()){
