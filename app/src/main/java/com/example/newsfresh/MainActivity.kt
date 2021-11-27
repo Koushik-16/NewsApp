@@ -52,6 +52,7 @@ class MainActivity : AppCompatActivity(), NewsItemclicked {
               mAdapter.updateNews(newsArray)
             },
             Response.ErrorListener {
+                Toast.makeText(this, "Something went wrong", Toast.LENGTH_LONG).show()
 
             }
 
